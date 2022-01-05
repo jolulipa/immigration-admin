@@ -29,21 +29,11 @@ const WelcomePage = () => {
         </ol>
       </div>
       <div className="row d-flex justify-content-center">
-        <Link
-          to="/screens/UsersPage"
-          className="badge badge-pill badge-danger align-items-between"
-          style={styles.navigate}
-        >
-          Oficinas Concesionarias
-        </Link>
+        {/* <a href="/screens/UsersPage">Oficinas Concesionarias</a> */}
+        {/* <a href="/screens/ConcessionaryPage">Bandeja de Concesionarios</a> */}
 
-        <Link
-          to="/screens/ConcessionaryPage"
-          className="badge badge-pill badge-info"
-          style={styles.navigate}
-        >
-          Bandeja de Concesionarios
-        </Link>
+        <Link to="/screens/UsersPage">Oficinas Concesionarias</Link>
+        <Link to="/screens/ConcessionaryPage">Bandeja de Concesionarios</Link>
       </div>
       <div className="card">
         <Footer />
