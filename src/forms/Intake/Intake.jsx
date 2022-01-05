@@ -36,11 +36,11 @@ const Intake = () => {
   const extractData = async ({ cleanData }) => {
     let i = 0;
     for (i = 1; i < 100; i++) {
-      delete cleanData?.p1[`text${i}`];
-      delete cleanData?.p2[`text${i}`];
-      delete cleanData?.p3[`text${i}`];
-      delete cleanData?.p4[`text${i}`];
-      delete cleanData?.p5[`text${i}`];
+      formData.p1[`text${i}`] = null;
+      formData.p2[`text${i}`] = null;
+      formData.p3[`text${i}`] = null;
+      formData.p4[`text${i}`] = null;
+      formData.p5[`text${i}`] = null;
     }
   };
 

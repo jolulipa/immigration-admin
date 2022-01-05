@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
@@ -32,7 +33,7 @@ const AdminPage = () => {
       <>
         {el.role === "con" && (
           <tr key={el.id} className="text-white">
-            <td>{el?.email}</td>
+            <td>{el.email}</td>
             <td>
               <Button
                 className="btn btn-danger btn-sm"
@@ -43,9 +44,9 @@ const AdminPage = () => {
                 Delete
               </Button>
             </td>
-            <td>{el?.role}</td>
-            <td>{el?.createdAt.split("T")[0]}</td>
-            <td>{el?.updatedAt.split("T")[0]}</td>
+            <td>{el.role}</td>
+            <td>{el.createdAt.split("T")[0]}</td>
+            <td>{el.updatedAt.split("T")[0]}</td>
             <td>
               <Button
                 className="btn-success btn-sm"

@@ -1,3 +1,4 @@
+import React from "react";
 import { Table } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
@@ -34,7 +35,7 @@ const ConcessionaryPage = () => {
       <>
         {el.role !== "adm" && (
           <tr key={el.id} className="text-white">
-            <td>{el?.email}</td>
+            <td>{el.email}</td>
             <td>
               <Button
                 className="btn btn-danger btn-sm "
@@ -45,9 +46,9 @@ const ConcessionaryPage = () => {
                 Delete
               </Button>
             </td>
-            <td className="	">{el?.role}</td>
-            <td className="	">{el?.createdAt.split("T")[0]}</td>
-            <td className="	">{el?.updatedAt.split("T")[0]}</td>
+            <td className="	">{el.role}</td>
+            <td className="	">{el.createdAt.split("T")[0]}</td>
+            <td className="	">{el.updatedAt.split("T")[0]}</td>
             <td>
               <Button
                 className="btn-primary btn-sm"
@@ -106,7 +107,7 @@ const ConcessionaryPage = () => {
       </h2>
       <h4 style={styles.title}>
         CLIENTES DEL CONCESIONARIO:{" "}
-        <span style={styles.name}>{context?.intake?.fullName}</span>
+        <span style={styles.name}>{context.intake.fullName}</span>
       </h4>
       <div className="row d-flex justify-content-center">
         <div>

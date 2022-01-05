@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { AUTH_TOKEN } from "../constants/storageKeys";
 import JWT from "jwt-decode";

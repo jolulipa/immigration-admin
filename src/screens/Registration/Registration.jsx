@@ -1,3 +1,4 @@
+import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { registerUser } from "../../api/auth";
 import * as yup from "yup"; //modulo de validacion de campos
@@ -43,9 +44,9 @@ const Registration = () => {
     const intakeData = JSON.parse(data);
     updateIntake({
       userId,
-      email: intakeData?.p1?.email || "",
-      phone: intakeData?.p1?.phone || "",
-      fullName: intakeData?.p1?.petFullName || "",
+      email: intakeData.p1.email || "",
+      phone: intakeData.p1.phone || "",
+      fullName: intakeData.p1.petFullName || "",
       role,
     });
   };

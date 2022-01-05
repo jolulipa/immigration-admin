@@ -26,7 +26,7 @@ const Concessionary = () => {
   const extractData = async ({ formData }) => {
     let i;
     for (i = 1; i < 100; i++) {
-      delete formData?.p1[`text${i}`];
+      formData.p1[`text${i}`] = null;
     }
   };
 

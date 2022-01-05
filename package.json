@@ -3,13 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rjsf/bootstrap-4": "^3.2.0",
+    "@rjsf/core": "^3.2.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "bootstrap": "^5.1.3",
+    "formik": "^2.2.6",
+    "jose": "^3.12.1",
+    "js-file-download": "^0.4.12",
+    "jwt-decode": "^3.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^2.1.3",
+    "react-toastify": "^7.0.4",
+    "styled-components": "^5.2.3",
+    "typeface-roboto": "^1.1.13",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",

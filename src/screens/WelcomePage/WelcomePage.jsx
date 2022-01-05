@@ -1,3 +1,4 @@
+import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { colors } from "../../ui-config/colors";
 import Footer from "../../components/Footer";

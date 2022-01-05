@@ -1,3 +1,4 @@
+import React from "react";
 import { Table } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
@@ -13,7 +14,7 @@ const UsersPage = () => {
   const history = useHistory();
   const location = useLocation();
   const { state: context } = useAppContext();
-  const navData = location?.state || {
+  const navData = location.state || {
     role: "reg",
     feName: context.intake.fullName,
   };
@@ -28,7 +29,7 @@ const UsersPage = () => {
 
   const printForm = async (id) => {
     const response = await print(id);
-    const { downloadKey } = await response?.json();
+    const { downloadKey } = await response.json();
     const url = `${baseUrl}/documents/${id}.pdf?downloadKey=${downloadKey}`;
     const link = document.createElement("a");
     link.href = url;
@@ -95,7 +96,7 @@ const UsersPage = () => {
 
   useEffect(() => {
     if (
-      !navData?.id &&
+      !navData.id &&
       (context.intake.role === "adm" || context.intake.role === "con")
     )
       return;
@@ -129,7 +130,7 @@ const UsersPage = () => {
       <h3 style={styles.title}>
         FORMULARIOS SOMETIDOS por{" "}
         <span style={styles.name}>
-          {navData?.role === "con" ? context.intake.fullName : navData?.feName}
+          {navData.role === "con" ? context.intake.fullName : navData.feName}
         </span>
       </h3>
       <div>

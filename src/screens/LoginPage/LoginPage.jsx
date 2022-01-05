@@ -1,3 +1,4 @@
+import React from "react";
 import { Formik } from "formik";
 import { toast } from "react-toastify";
 import { loginUser } from "../../api/auth";
@@ -42,9 +43,9 @@ const Login = () => {
     const intakeData = JSON.parse(data);
     updateIntake({
       userId,
-      email: intakeData?.p1?.email || "",
-      phone: intakeData?.p1?.phone || "",
-      fullName: intakeData?.p1?.petFullName || name,
+      email: intakeData.p1.email || "",
+      phone: intakeData.p1.phone || "",
+      fullName: intakeData.p1.petFullName || name,
       role,
     });
   };
