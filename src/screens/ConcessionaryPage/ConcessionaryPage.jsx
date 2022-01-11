@@ -33,8 +33,8 @@ const ConcessionaryPage = () => {
   const renderResults = () =>
     results.map((el) => (
       <>
-        {el.role !== "adm" && (
-          <tr key={el.id} className="text-white">
+        {el.role === "reg" && context.intake.userId === el.concessionary && (
+          <tr key={el.id}>
             <td>{el.email}</td>
             <td>
               <Button
@@ -101,7 +101,7 @@ const ConcessionaryPage = () => {
   }, []);
 
   return (
-    <div className="container p-3 my-3 text-white">
+    <div className="container p-3 my-3 ">
       <h2 style={styles.title}>
         CONCESIONARIO DE LA APP DE THE IMMIGRATION TIME
       </h2>

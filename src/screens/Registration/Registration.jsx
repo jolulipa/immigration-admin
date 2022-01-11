@@ -82,7 +82,7 @@ const Registration = () => {
     >
       {({ isSubmitting }) => (
         <Form className="form-container registrationForm">
-          <h2 className="col-10">Registro de Usuarios</h2>
+          <h2 className="col-10">Registro de Concesionarios</h2>
           <div className="mt-3">
             <label htmlFor="name">Full Name</label>
             <Field

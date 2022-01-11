@@ -48,7 +48,7 @@ const WelcomePage = () => {
           to="/screens/UsersPage"
         >
           <button className="btn btn-danger" type="button">
-            Oficinas Concesionarias
+            General Admin
           </button>
         </Link>
         <Link

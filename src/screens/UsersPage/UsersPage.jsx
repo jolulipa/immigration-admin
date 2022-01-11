@@ -42,7 +42,13 @@ const UsersPage = () => {
 
   function decriptData(el) {
     const elData = JSON.parse(el.data);
-    const todo = [elData.p1.email, "-", elData.p1.phone];
+    let todo;
+    if (el.formId === "Intake") {
+      todo = [elData.p1.email, "-", elData.p1.phone];
+    } else {
+      todo = [el.formId, "-", elData.p1.petitionFor];
+    }
+
     return todo;
   }
 

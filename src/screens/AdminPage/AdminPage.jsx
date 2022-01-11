@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { colors } from "../../ui-config/colors";
 import { readUsers } from "../../api/auth";
@@ -32,7 +32,7 @@ const AdminPage = () => {
     results.map((el) => (
       <>
         {el.role === "con" && (
-          <tr key={el.id} className="text-white">
+          <tr key={el.id}>
             <td>{el.email}</td>
             <td>
               <Button
@@ -81,7 +81,7 @@ const AdminPage = () => {
           <th>...Go To..:</th>
         </tr>
       </thead>
-      <tbody>{renderResults(results)}</tbody>
+      <tbody style={styles.variable}>{renderResults(results)}</tbody>
     </table>
   );
 
@@ -99,7 +99,7 @@ const AdminPage = () => {
   }, []);
 
   return (
-    <div className="container p-3 my-3 text-white">
+    <div className="container p-3 my-3 ">
       <h2 style={styles.title}>
         ADMINISTRACIÓN GENERAL DE LA APP DE THE IMMIGRATION TIME
       </h2>
@@ -112,6 +112,11 @@ const AdminPage = () => {
           </p>
         </div>
         <div>{renderTable(results)}</div>
+      </div>
+      <div className="row d-flex justify-content-center">
+        <Link to="/screens/Registration" className="btn btn-info">
+          ADD NEW CONCESSIONARY
+        </Link>
       </div>
     </div>
   );
@@ -132,9 +137,7 @@ const styles = {
     color: colors.brown,
   },
   variable: {
-    fontWeight: "800",
-    padding: 15,
-    color: colors.blue,
+    color: colors.brown,
   },
 };
 export default AdminPage;
