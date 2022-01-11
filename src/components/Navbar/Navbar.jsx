@@ -35,11 +35,7 @@ const Navbar = () => {
         </div>
         <div className="col d-none d-md-block d-xl-block status">
           {!!email && `Bienvenido ${email}`}
-          <button
-            className="badge badge-pill badge-danger font-weight-light"
-            type="button"
-            onClick={handleLogout}
-          >
+          <button className="button" type="button" onClick={handleLogout}>
             {email ? `Logout` : "No User"}
           </button>
         </div>
@@ -69,13 +65,6 @@ const Navbar = () => {
         >
           LOGIN
         </NavLink>
-        {/* <NavLink
-          to="/screens/AdminPage"
-          className="col-1 d-none d-md-block d-lg-block d-xl-block"
-        >
-          ADMIN
-        </NavLink>
-        <Burger className="d-md-none d-lg-none d-xl-block" /> */}
       </div>
     </div>
   );

@@ -70,9 +70,9 @@ const AdminPage = () => {
     ));
 
   const renderTable = (results) => (
-    <table className="table table-striped">
+    <table className="table table-striped ">
       <thead>
-        <tr key={"header"}>
+        <tr key={"header"} className="bg-info">
           <th>User email</th>
           <th> Delete Acc</th>
           <th>Role</th>
@@ -99,7 +99,7 @@ const AdminPage = () => {
   }, []);
 
   return (
-    <div className="container p-3 my-3 bg-primary text-white">
+    <div className="container p-3 my-3 text-white">
       <h2 style={styles.title}>
         ADMINISTRACIÓN GENERAL DE LA APP DE THE IMMIGRATION TIME
       </h2>

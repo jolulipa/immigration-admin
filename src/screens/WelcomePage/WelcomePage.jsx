@@ -21,19 +21,52 @@ const WelcomePage = () => {
           immigración. Esta parte del sistema permitirá al Administrador único
           del sistema hacer las siguientes tareas:
         </p>
-        <ol>
+        <ol
+          style={{
+            marginLeft: 20,
+            marginBottom: 20,
+            fontSize: 14,
+          }}
+        >
           <li>crear oficinas concesionarias</li>
           <li>crear usuarios concesionarios</li>
           <li>administrar las cuentas y pagos de los concesionarios</li>
           <li>Borrar Registros</li>
         </ol>
       </div>
-      <div className="row d-flex justify-content-center">
-        {/* <a href="/screens/UsersPage">Oficinas Concesionarias</a> */}
-        {/* <a href="/screens/ConcessionaryPage">Bandeja de Concesionarios</a> */}
-
-        <Link to="/screens/UsersPage">Oficinas Concesionarias</Link>
-        <Link to="/screens/ConcessionaryPage">Bandeja de Concesionarios</Link>
+      <div className="d-flex flex-row">
+        <Link
+          className="p2"
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            textDecoration: "none",
+            marginBottom: 20,
+            fontSize: 20,
+          }}
+          to="/screens/UsersPage"
+        >
+          <button className="btn btn-danger" type="button">
+            Oficinas Concesionarias
+          </button>
+        </Link>
+        <Link
+          className="p2"
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            textDecoration: "none",
+            marginBottom: 20,
+            fontSize: 20,
+          }}
+          to="/screens/ConcessionaryPage"
+        >
+          <button className="btn btn-success" type="button">
+            Bandeja de Concesionarios
+          </button>
+        </Link>
       </div>
       <div className="card">
         <Footer />

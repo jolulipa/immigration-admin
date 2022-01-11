@@ -72,9 +72,9 @@ const ConcessionaryPage = () => {
     ));
 
   const renderTable = (results) => (
-    <Table striped variant="dark">
+    <Table striped>
       <thead>
-        <tr key={results.id}>
+        <tr key={results.id} className="bg-success">
           <th>User email</th>
           <th className="	">Delete Acc</th>
           <th className="	">Role</th>
@@ -101,7 +101,7 @@ const ConcessionaryPage = () => {
   }, []);
 
   return (
-    <div className="container p-3 my-3 bg-dark text-white">
+    <div className="container p-3 my-3 text-white">
       <h2 style={styles.title}>
         CONCESIONARIO DE LA APP DE THE IMMIGRATION TIME
       </h2>
@@ -135,7 +135,7 @@ const styles = {
     fontSize: 18,
     padding: 15,
     margin: 0,
-    color: colors.gray,
+    color: colors.brown,
   },
   variable: {
     fontWeight: "800",
