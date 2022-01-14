@@ -29,12 +29,15 @@ export const readAllCons = async () => {
 };
 
 export const readConOffice = async (id) => {
-  const response = await fetch(`${baseUrl}/api/conce/readConOffice/${id}`, {
-    method: "GET",
-    headers: {
-      jwt: token,
-    },
-  }).catch((error) => console.log(error));
+  const response = await fetch(
+    `${baseUrl}/api/conce/public/readConOffice/${id}`,
+    {
+      method: "GET",
+      headers: {
+        jwt: token,
+      },
+    }
+  ).catch((error) => console.log(error));
   const datos = await response.json();
   return await datos;
 };
