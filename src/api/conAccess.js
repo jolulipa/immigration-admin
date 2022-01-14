@@ -18,7 +18,7 @@ const handleError = () => {
 };
 
 export const readAllCons = async () => {
-  const response = await fetch(`${baseUrl}/api/forms/readAllForms`, {
+  const response = await fetch(`${baseUrl}/api/conce/readAllCons`, {
     method: "GET",
     headers: {
       jwt: token,
@@ -29,7 +29,7 @@ export const readAllCons = async () => {
 };
 
 export const readConOffice = async (id) => {
-  const response = await fetch(`${baseUrl}/api/forms/readForm/${id}`, {
+  const response = await fetch(`${baseUrl}/api/conce/readConOffice/${id}`, {
     method: "GET",
     headers: {
       jwt: token,
@@ -41,7 +41,7 @@ export const readConOffice = async (id) => {
 
 export const createUpdateConOffice = async (values) => {
   try {
-    const response = await fetch(`${baseUrl}/api/forms/createUpdateForm`, {
+    const response = await fetch(`${baseUrl}/api/conce/createUpdateConOffice`, {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
@@ -58,7 +58,7 @@ export const createUpdateConOffice = async (values) => {
 
 export const deleteConOffice = async (id) => {
   if (hasAccess) {
-    await fetch(`${baseUrl}/api/forms/updateForm/${id}`, {
+    await fetch(`${baseUrl}/api/conce/deleteConOffice/${id}`, {
       method: "DELETE",
       headers: {
         jwt: token,

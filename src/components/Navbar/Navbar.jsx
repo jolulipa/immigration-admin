@@ -43,7 +43,10 @@ const Navbar = () => {
       <div className="row navbar">
         <NavLink
           to="/"
-          className="col-1  d-none d-md-block d-lg-block d-xl-block"
+          className="col-1 d-none d-md-block d-lg-block d-xl-block"
+          style={{
+            marginLeft: 20,
+          }}
         >
           HOME
         </NavLink>

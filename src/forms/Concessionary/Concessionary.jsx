@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Form from "@rjsf/bootstrap-4";
 import schema from "./concessionaryschema";
 import uiSchema from "./concessionaryUiSchema";
 import { readConOffice, createUpdateConOffice } from "../../api/conAccess";
+import { CLIENT_DATA } from "../../constants/storageKeys";
 
 const Concessionary = () => {
   const [formData, setFormData] = useState();
-  const { id } = useParams();
-  const isEditMode = !!id;
+  const { cliUser } = JSON.parse(localStorage?.getItem(CLIENT_DATA));
+  const isEditMode = !!cliUser;
   const history = useHistory();
 
-  const navigateToPage = () => {
-    history.push("/screens/UsersPage");
+  const navigateToAdmin = () => {
+    history.push("/screens/AdminPage");
   };
 
   useEffect(() => {
     if (!isEditMode) return;
     (async () => {
-      const values = await readConOffice(id);
+      const values = await readConOffice(cliUser);
+      console.log("Datos leidos en BD concesionario:", values);
       setFormData(JSON.parse(values.data));
     })();
-  }, [isEditMode, id]);
+  }, [isEditMode, cliUser]);
 
   const extractData = async ({ formData }) => {
     let i;
@@ -37,9 +39,8 @@ const Concessionary = () => {
       formId: "I130",
       formStatus: "Unpaid",
     };
-    console.log(obj);
     await createUpdateConOffice(obj);
-    navigateToPage();
+    navigateToAdmin();
   };
 
   return (

@@ -24,6 +24,7 @@ const UsersPage = () => {
   console.log("Datos pasados por CONTEXTO:", context);
 
   const navigateToForm = (id, formId) => {
+    console.log("voy al formulario", id, formId);
     history.push(`/forms/${formId}/${id}`);
   };
 
