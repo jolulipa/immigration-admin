@@ -52,7 +52,7 @@ const Registration = () => {
   };
 
   const redirectLocation = () => {
-    history.push(`/screens/UsersPage`);
+    history.push(`/screens/AdminPage`);
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -76,7 +76,7 @@ const Registration = () => {
 
   return (
     <Formik
-      initialValues={{ email: "", password: "", role: "reg" }}
+      initialValues={{ email: "", password: "", role: "con" }}
       onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >

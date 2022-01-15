@@ -20,25 +20,33 @@ const Concessionary = () => {
     if (!isEditMode) return;
     (async () => {
       const values = await readConOffice(cliUser);
-      console.log("Datos leidos en BD concesionario:", values);
-      setFormData(JSON.parse(values.data));
+      if (values) {
+        console.log("Datos leidos en BD concesionario:", values);
+        setFormData(JSON.parse(values.data));
+      } else {
+        console.log("creando registro nuevo en conce");
+      }
     })();
   }, [isEditMode, cliUser]);
 
   const extractData = async ({ formData }) => {
     let i;
     for (i = 1; i < 100; i++) {
-      formData.p1[`text${i}`] = null;
+      delete formData.p1[`text${i}`];
     }
   };
 
   const handleSubmit = async ({ formData }) => {
     extractData({ formData });
     const obj = {
+      officeEmail: formData.p1.conEmail,
+      officeName: formData.p1.conName,
+      description: formData.p1.conOffice,
+      rate: formData.p1.rentRate,
+      concessionary: cliUser,
       data: JSON.stringify(formData),
-      formId: "I130",
-      formStatus: "Unpaid",
     };
+    console.log("datos a crear en conce:", obj);
     await createUpdateConOffice(obj);
     navigateToAdmin();
   };
