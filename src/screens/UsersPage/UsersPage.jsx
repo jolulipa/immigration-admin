@@ -63,7 +63,7 @@ const UsersPage = () => {
         <td className="	">{el.updatedAt.split("T")[0]}</td>
         <td>
           <Button
-            className="btn-Primary btn-sm"
+            className="btn-outline-primary btn-sm"
             onClick={() => {
               navigateToForm(el.id, el.formId);
             }}
@@ -159,7 +159,7 @@ const UsersPage = () => {
           ) : (
             <Link
               to="/screens/ConcessionaryPage"
-              className="badge badge-pill badge-danger"
+              className="btn btn-outline-danger"
             >
               Back to admin page
             </Link>
@@ -168,7 +168,7 @@ const UsersPage = () => {
       </div>
       <div>{renderTable()}</div>
       <div className="row d-flex justify-content-center">
-        <Link to="/screens/LandingPage" className="badge badge-pill badge-info">
+        <Link to="/screens/LandingPage" className="btn btn-outline-dark">
           ADD NEW FORM
         </Link>
       </div>
