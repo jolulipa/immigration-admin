@@ -114,6 +114,7 @@ const UsersPage = () => {
         context.intake.role === "adm" || context.intake.role === "con"
           ? await readAllFormsAdm(navData.id)
           : await readAllForms();
+      console.log("Client Forms:", forms);
       if (!forms || forms.length === 0) {
         if (context.intake.role === "adm") {
           history.push("/screens/AdminPage");
