@@ -48,7 +48,7 @@ const WelcomePage = () => {
           to="/screens/UsersPage"
         >
           <button className="btn btn-danger" type="button">
-            General Admin
+            Bandeja Administrador Gral
           </button>
         </Link>
         <Link
